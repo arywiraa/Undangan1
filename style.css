@@ -1,0 +1,1123 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --sage-green: #9caf88;
+    --dark-sage: #6b7f5a;
+    --cream: #faf8f3;
+    --warm-beige: #e8dcc4;
+    --text-dark: #2c3e2e;
+    --gold: #d4af37;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* Desktop centering */
+@media (min-width: 768px) {
+    body {
+        display: flex;
+        justify-content: center;
+        background: #d4c4b0;
+    }
+    .mobile-container {
+        width: 375px;
+        max-width: 375px;
+        box-shadow: 0 0 50px rgba(0,0,0,0.3);
+        position: relative;
+    }
+}
+
+.mobile-container {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--cream);
+}
+
+/* Scroll Lock */
+body.scroll-locked {
+    overflow: hidden;
+}
+
+/* Cover Section */
+#cover {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cover-content {
+    text-align: center;
+    z-index: 2;
+    padding: 0 20px;
+    padding-top: 20rem;
+}
+
+.cover-date {
+    font-size: 1rem;
+    color: var(--dark-sage);
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+    animation: none;
+}
+
+.btn-open {
+    padding: 15px 30px;
+    background: var(--cream);
+    color: var(--dark-sage);
+    border: none;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: inline-block;
+    animation: fadeInUp 1.5s ease;
+}
+
+.btn-open:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Video Section */
+#video-section {
+    height: 100vh;
+    position: relative;
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 9/16;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    border: 5px solid rgb(216, 169, 102);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.swipe-indicator {
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1rem;
+    animation: bounce 2s infinite;
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 10;
+    pointer-events: none;
+    text-align: center;
+}
+
+.swipe-indicator.show {
+    opacity: 1;
+}
+
+.swipe-indicator i {
+    display: block;
+    margin-top: 5px;
+    font-size: 1.5rem;
+}
+
+/* Video Flower Divider */
+.video-divider {
+    position: absolute;
+    bottom: -180px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Main Content */
+.section {
+    padding: 60px 20px;
+    animation: fadeIn 1s ease;
+}
+
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--dark-sage);
+    margin-bottom: 2rem;
+}
+
+/* Ayat Section */
+#ayat {
+    min-height: auto;    
+    padding-top: 100px;     
+    padding-bottom: 100px;  
+    display: block;          
+    position: relative;
+}
+
+.ayat-wrapper {
+    width: 100%;
+    max-width: 340px; /* Batas lebar biar rapi di desktop */
+    margin: 0 auto;
+}
+
+.ayat-box {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 1);
+    border-radius: 25px;
+    
+    /* Ukuran Kotak (Kecil) */
+    padding: 15px 20px;
+    width: 85%;
+    max-width: 340px;
+    
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    
+    /* Posisi Tengah Horizontal */
+    margin-left: auto;
+    margin-right: auto;  
+}
+
+/* Logo */
+.ayat-logo {
+    margin-bottom: 25px;
+}
+
+.ayat-logo img {
+    width: 70px;
+    height: auto;
+    opacity: 0.9;
+}
+
+/* Container untuk Arab & Terjemahan biar rapi */
+.ayat-content {
+    margin-bottom: 25px;
+}
+
+/* Teks Arab */
+.ayat-arabic {
+    font-family: 'Scheherazade New', serif;
+    font-size: clamp(1.2rem, 5vw, 2.2rem); 
+    line-height: 2.2;
+    text-align: center; 
+    direction: rtl;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+    font-weight: 700;
+    padding: 0 10px; 
+}
+
+/* Garis Pemisah Elegan */
+.ayat-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    opacity: 0.6;
+}
+
+.ayat-divider span {
+    height: 1px;
+    width: 40px;
+    background: var(--text-dark);
+}
+
+/* Terjemahan */
+.ayat-translation {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 3vw, 1.15rem); 
+    line-height: 1.7;
+    color: #444;
+    font-style: italic;
+    text-align: justify; 
+    text-align-last: center; 
+}
+
+/* Source */
+.ayat-source {
+    font-size: 0.9rem;
+    color: var(--dark-sage);
+    font-weight: 700;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    display: inline-block;
+    padding-top: 15px;
+    width: 100%;
+}
+
+
+
+/* ========== MEMPELAI SECTION ========== */
+/* SECTION */
+.mempelai-section {
+    position: relative;
+    min-height: 100vh;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Background Image from HTML */
+.bg-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* ARCH CONTAINER */
+.arch-container {
+    position: relative;
+    z-index: 2;
+    background: rgba(243, 238, 230, 0.9);
+    width: 100%;
+    max-width: 420px;
+    padding: 60px 30px 80px;
+    border-radius: 300px 300px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    overflow: hidden;
+    border: 3px solid #8F9772;
+}
+
+/* INTRO */
+.title-script {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.title-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 50px;
+}
+
+/* PERSON */
+.person {
+    margin-bottom: 60px;
+}
+
+/* Photo Frame Polaroid */
+.photo-frame {
+    width: 300px;
+}
+
+.photo-frame img {
+    width: 100%;
+    display: block;
+}
+
+/* Name */
+.name-script {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.fullname {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.parent {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Instagram Button */
+.btn-ig {
+    display: inline-block;
+    padding: 8px 22px;
+    background: #8c8f6f;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+/* Ampersand */
+.ampersand {
+    font-size: 40px;
+    margin: 20px 0 50px;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+
+
+
+/* Countdown */
+.countdown-section {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    overflow: hidden; /* Prevent overflow */
+}
+
+.countdown-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.countdown-overlay {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 100%;
+    width: 100%;
+}
+
+/* Countdown Title Box */
+.countdown-title-box {
+    display: inline-block;
+    border-radius: 30px;
+    margin-bottom: 40px;
+}
+
+.countdown-title-box h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: white;
+    margin: 0;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.countdown-wrapper {
+    background: rgba(255, 255, 255, 0.25);
+    padding: 20px 20px; /* Ubah dari 5px jadi 20px biar lebih proporsional */
+    border-radius: 20px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: inline-block; /* Tetep pakai ini */
+    width: auto; /* Tetep auto */
+}
+
+
+/* Countdown Grid */
+.countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 0px;
+    padding: 0;
+    width: 100%;
+}
+
+.countdown-item {
+    background: rgba(255, 255, 255, 0.95);
+    padding: px 0px; 
+    border-radius: 15px; /* DIPERBESAR radius (dari 12px) */
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 7px;
+}
+
+.countdown-label {
+    font-size: 0.75rem !important;
+    color: #333;
+    font-weight: 500;
+    text-transform: capitalize;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px;
+    border-radius: 15px;
+    
+}
+
+.countdown-number {
+    font-size: 1.5rem !important; /* FONT ANGKA DIPERKECIL (dari 2rem) */
+    font-weight: 700;
+    color: #333;
+    line-height: 1;
+    margin-top: 7px;
+}
+
+
+/* Save The Date Button */
+.btn-save-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-save-date:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-save-date i {
+    font-size: 1.2rem;
+}
+
+/* Detail Invitation Section */
+.detail-invitation-section {
+    background: #B8B589;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.invitation-text {
+    color: white;
+    font-size: 1rem;
+    max-width: 400px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+/* Detail Card Wrapper with Background */
+.detail-card-wrapper {
+    position: relative;
+    max-width: 450px;
+    margin: 0 auto;
+    /* background-image sudah di HTML */
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    padding: 30px 20px;
+}
+
+.detail-card-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.detail-card {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 15px;
+    padding: 40px 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Event Details */
+.event-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    color: #333;
+    margin: 0 0 15px 0;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.event-day {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #333;
+    margin: 10px 0;
+    letter-spacing: 2px;
+}
+
+.event-date {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #333;
+    margin: 5px 0 15px 0;
+    letter-spacing: 1px;
+}
+
+.event-time {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.location-icon {
+    width: 40px;
+    height: 40px;
+    background: #B8B589;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.venue-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+    margin: 15px 0;
+    letter-spacing: 1px;
+}
+
+.venue-address {
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Google Maps Button */
+.btn-google-maps {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 30px;
+    background: #8B8B6E;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-google-maps:hover {
+    background: #6B6B4E;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .countdown-grid {
+        gap: 10px;
+    }
+    
+    .countdown-number {
+        font-size: 2rem;
+    }
+    
+    .countdown-label {
+        font-size: 0.7rem;
+    }
+    
+    .countdown-title-box h2 {
+        font-size: 2rem;
+    }
+    
+    .event-title {
+        font-size: 2.2rem;
+    }
+    
+    .detail-card {
+        padding: 30px 20px;
+    }
+}
+
+/* Galeri */
+#gallery {
+  padding: 4rem 0;
+}
+
+.gallery-title {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+/* Swiper container */
+.gallery-slider {
+  width: 100%;
+  padding: 2rem 0 3rem;
+  overflow-x: auto;
+}
+
+/* Slide size */
+.swiper-slide {
+  width: 20rem !important;
+  height: 26rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+/* Image */
+.swiper-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 25px;
+}
+
+/* Navigation wrapper */
+.gallery-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+/* Arrow button */
+.gallery-prev,
+.gallery-next {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Sage muda (kiri) */
+.gallery-prev {
+  background: #cbd5c0;
+  color: #3f4f3a;
+}
+
+/* Sage (kanan) */
+.gallery-next {
+  background: #7f9f8a;
+  color: #ffffff;
+}
+
+/* Counter pill */
+.gallery-counter {
+  padding: 6px 14px;
+  background: #cbd5c0;
+  border-radius: 999px;
+  font-size: 14px;
+  color: #3f4f3a;
+}
+
+
+
+
+
+
+
+
+/* Quote */
+#quote {
+    background: var(--sage-green);
+    color: white;
+    text-align: center;
+}
+
+.quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    font-style: italic;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Kado Digital */
+#kado {
+    background: linear-gradient(to bottom, var(--cream), var(--warm-beige));
+}
+
+.kado-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.bank-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--sage-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2rem;
+    color: white;
+}
+
+.bank-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--dark-sage);
+    margin-bottom: 10px;
+}
+
+.account-number {
+    font-family: 'Courier New', monospace;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    padding: 15px;
+    background: var(--cream);
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.account-name {
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.btn-copy {
+    padding: 12px 30px;
+    background: var(--dark-sage);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-copy:hover {
+    background: var(--sage-green);
+}
+
+/* RSVP */
+#rsvp {
+    background: var(--cream);
+}
+
+.rsvp-form {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 500px;
+    margin: 0 auto 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--dark-sage);
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--warm-beige);
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background: var(--dark-sage);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: var(--sage-green);
+}
+
+/* Ucapan List */
+.ucapan-list {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.ucapan-item {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    animation: fadeInUp 0.5s ease;
+}
+
+.ucapan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.ucapan-name {
+    font-weight: 600;
+    color: var(--dark-sage);
+}
+
+.ucapan-status {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    background: var(--sage-green);
+    color: white;
+}
+
+.ucapan-status.tidak-hadir {
+    background: #d4a574;
+}
+
+.ucapan-text {
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Footer */
+#footer {
+    background: var(--dark-sage);
+    color: white;
+    text-align: center;
+    padding: 20px 10px 100px 10px;
+}
+
+.footer-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.footer-year {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Floating Navbar */
+.floating-navbar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    padding: 12px 20px;
+    display: flex;
+    gap: 25px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.floating-navbar.show {
+    opacity: 2;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    color: var(--dark-sage);
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    color: var(--sage-green);
+    transform: translateY(-3px);
+}
+
+.nav-item i {
+    font-size: 1.3rem;
+    margin-bottom: 3px;
+}
+
+.nav-item span {
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+@media (min-width: 768px) {
+    .floating-navbar {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Audio Control Button */
+.audio-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    z-index: 999;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.audio-control.show {
+    opacity: 1;
+}
+
+.audio-control:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.audio-control i {
+    font-size: 1.3rem;
+    color: var(--dark-sage);
+    transition: all 0.3s ease;
+}
+
+.audio-control.muted i {
+    color: #999;
+}
+
+@media (min-width: 768px) {
+    .audio-control {
+        right: calc(50% - 215px - 70px);
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}

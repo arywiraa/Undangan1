@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arya & Reva</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">    <!-- Swiper CSS -->
+</head>
+<body class="scroll-locked">
+    <div class="mobile-container">
+        <!-- Cover Section -->
+        <section id="cover" style="background-image: url('img/1.png'); background-size: cover; background-position: center;">
+            <div class="cover-content">
+                <p class="cover-date">Dear</p>
+                <button class="btn-open" onclick="openInvitation()">
+                    <i class="fas fa-envelope-open"></i> Buka Undangan
+                </button>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section id="video-section" style="background-image: url('img/bgvid.png'); background-size: cover; background-position: center;">
+            <div class="video-container">
+                <iframe 
+                    id="video-player"
+                    src=""
+                    frameborder="0"
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="swipe-indicator" id="swipe-indicator">
+                Scroll ke atas
+                <i class="fas fa-chevron-up"></i>
+            </div>
+            <img src="img/BungaPembatas.png" alt="Flower Divider" class="video-divider">
+        </section>
+
+         <!-- 3. AYAT SECTION (REVISI RESPONSIVE) -->
+        <section id="ayat" class="section" style="background-image: url('img/3.png'); background-size: cover; background-position: center;">
+            <div class="ayat-wrapper">
+                <div class="ayat-box">
+                    <!-- Logo Monogram -->
+                    <div class="ayat-logo">
+                        <img src="img/LOGO.png" alt="Monogram" onerror="this.style.display='none'">
+                    </div>
+                    
+                    <!-- Ayat Arab -->
+                    <div class="ayat-content">
+                        <p class="ayat-arabic">
+                            وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةًۗ اِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ ۝٢١
+                        </p>
+                        
+                        <!-- Garis Pemisah -->
+                        <div class="ayat-divider">
+                            <span></span>
+                            <i class="fas fa-star" style="font-size: 10px; color: var(--gold);"></i>
+                            <span></span>
+                        </div>
+                        
+                        <!-- Terjemahan -->
+                        <p class="ayat-translation">
+                            "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang."
+                        </p>
+                    </div>
+                    
+                    <!-- Source Ayat-->
+                    <div class="ayat-source">
+                        — QS. Ar-Rum: 21 —
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="mempelai-section">
+            <!-- Background Image -->
+            <img src="img/bgpengantin.png" class="bg-image" alt="background">
+
+            <div class="arch-container">
+
+                <div class="intro">
+                    <h2 class="title-script">We Are</h2>
+                    <h1 class="title-main">Getting Married!</h1>
+                    <p class="subtitle">
+                        Assalamu'alaikum Wr. Wb.<br><br>
+                        Glory be to Allah, who created His creatures in pairs.
+                        Ya Allah, may Your blessings be poured out upon our marriage.
+                    </p>
+                </div>
+
+                <!-- Perempuan -->
+                <div class="person">
+                    <div class="photo-frame">
+                        <img src="img/6.png" alt="Bride">
+                    </div>
+
+                    <h2 class="name-script">Dhilah</h2>
+                    <p class="fullname">Dhilah Fairuz Syirah</p>
+                    <p class="parent">
+                        Second Daughter Of<br>
+                        Mr. Jahaludin Mersyah<br>
+                        & Mrs. Yuhani
+                    </p>
+
+                    <a href="https://www.instagram.com/revalinaraaaaa_/" class="btn-ig">@revalinaraaaaa_</a>
+                </div>
+
+                <div class="ampersand">&</div>
+
+                <!-- Laki Laki -->
+                <div class="person">
+                    <div class="photo-frame">
+                        <img src="img/5.png" alt="Groom">
+                    </div>
+
+                    <h2 class="name-script">Hafshad</h2>
+                    <p class="fullname">Hafshad Majeed</p>
+                    <p class="parent">
+                        Second Son Of<br>
+                        Mr. Abdul Majeed Rayamarakar<br>
+                        & Mrs. Rahila Banu Abdul Majeed
+                    </p>
+
+                    <a href="https://www.instagram.com/wiraryaa/" class="btn-ig">@wiraryaa</a>
+                </div>
+
+            </div>
+        </section>
+
+
+       <!-- Detail Acara Section -->
+        <section id="detail-acara" class="section countdown-section" style="background-image: url('img/Countdown.png');">
+            <div class="countdown-overlay">
+                <!-- Countdown Title -->
+                <div class="countdown-title-box">
+                    <h2>Countdown</h2>
+                </div>
+                
+                <!-- Countdown Timer -->
+                <div class="countdown-wrapper">
+                    <div class="countdown-grid">
+                        <div class="countdown-item">
+                            <div class="countdown-label">Days</div>
+                            <div class="countdown-number" id="days">0</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-label">Hours</div>
+                            <div class="countdown-number" id="hours">0</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-label">Minutes</div>
+                            <div class="countdown-number" id="minutes">0</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-label">Second</div>
+                            <div class="countdown-number" id="seconds">0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Save The Date Button -->
+                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Arya+%26+Reva&dates=20260214T030000Z/20260214T050000Z&details=Akad+Nikah+dan+Resepsi&location=Grand+Ballroom+Hotel+Mulia,+Jl.+Asia+Afrika+No.+8,+Jakarta+Pusat" 
+                target="_blank" 
+                class="btn-save-date">
+                    <i class="far fa-calendar"></i> Save The Date
+                </a>
+            </div>
+        </section>
+
+        <!-- Detail Card Section -->
+        <section class="detail-invitation-section">
+            <p class="invitation-text">By asking for the grace and blessing of Allah SWT, we invite you to attend our wedding:</p>
+            
+            <div class="detail-card-wrapper" style="background-image: url('path-to-card-background.jpg');">
+                <div class="detail-card">
+                    <h3 class="event-title">Akad Nikah</h3>
+                    <p class="event-day">FRIDAY</p>
+                    <p class="event-date">06 FEBRUARY 2026</p>
+                    <p class="event-time">3.30 - 6.00 PM</p>
+                    
+                    <div class="location-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    
+                    <h4 class="venue-name">VILLA SRIMANGANTI</h4>
+                    <p class="venue-address">
+                        No. 34, Raya PKP Street, RT 02/RW 08,<br>
+                        Kelapa Dua Wetan Village, Ciracas<br>
+                        District, East Jakarta City, Special Capital<br>
+                        Region of Jakarta 13720, Indonesia
+                    </p>
+                    
+                    <a href="https://www.google.com/maps?q=-6.2088,106.8456" target="_blank" class="btn-google-maps">
+                        <i class="fas fa-map-marker-alt"></i> Google Maps
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeri Section -->
+        <section id="gallery">
+            <h2 class="gallery-title">Our Gallery</h2>
+            <div class="swiper gallery-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/prewed-1.png" alt="Prewedding 1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/prewed-2.png" alt="Prewedding 2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/prewed-3.png" alt="Prewedding 3">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/prewed-4.png" alt="Prewedding 4">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/prewed-5.png" alt="Prewedding 5">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/prewed-6.png" alt="Prewedding 6">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/prewed-7.png" alt="Prewedding 7">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/prewed-8.png" alt="Prewedding 8">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/prewed-9.png" alt="Prewedding 9">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/prewed-10.png" alt="Prewedding 10">
+                    </div>
+                </div>
+                <!-- Custom Navigation -->
+                <div class="gallery-nav">
+                <button class="gallery-prev">‹</button>
+
+                <div class="gallery-counter">
+                    <span id="currentSlide">1</span> of <span id="totalSlide">4</span>
+                </div>
+
+                <button class="gallery-next">›</button>
+                </div>
+            </div>
+            </section>
+
+
+
+        <!-- Quote Section -->
+        <section id="quote" class="section">
+            <p class="quote-text">
+                "Cinta sejati bukanlah tentang menemukan seseorang yang sempurna, tetapi tentang melihat kesempurnaan dalam ketidaksempurnaan seseorang."
+            </p>
+        </section>
+
+        <!-- Kado Digital Section -->
+        <section id="kado" class="section">
+            <h2 class="section-title">Kado Digital</h2>
+            <div class="kado-card">
+                <div class="bank-icon">🏦</div>
+                <div class="bank-name">Bank Mandiri</div>
+                <div class="account-number" id="account-number">1234567890</div>
+                <div class="account-name">a.n. Arya & Reva</div>
+                <button class="btn-copy" onclick="copyAccountNumber()">
+                    <i class="far fa-copy"></i> Salin Nomor Rekening
+                </button>
+            </div>
+        </section>
+
+        <!-- RSVP Section -->
+        <section id="rsvp" class="section">
+            <h2 class="section-title">RSVP & Ucapan</h2>
+            
+            <form class="rsvp-form" onsubmit="submitRSVP(event)">
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" id="nama" placeholder="Masukkan nama Anda" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Konfirmasi Kehadiran</label>
+                    <select id="kehadiran" required>
+                        <option value="">Pilih kehadiran</option>
+                        <option value="Hadir">Hadir</option>
+                        <option value="Tidak Hadir">Tidak Hadir</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Ucapan & Doa</label>
+                    <textarea id="ucapan" placeholder="Berikan ucapan dan doa untuk kami..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <i class="fas fa-paper-plane"></i> Kirim Ucapan
+                </button>
+            </form>
+
+            <div class="ucapan-list" id="ucapan-list">
+                <!-- Ucapan akan muncul di sini -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section id="footer">
+            <p class="footer-title">Arya & Reva</p>
+            <p class="footer-year">2026</p>
+            <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.8;">
+                Terima kasih atas kehadiran dan doa restu Anda
+            </p>
+        </section>
+
+        <!-- Floating Navbar -->
+        <div class="floating-navbar" id="floating-navbar">
+            <div class="nav-item" onclick="scrollToSection('video-section')">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </div>
+            <div class="nav-item" onclick="scrollToSection('mempelai')">
+                <i class="fas fa-user-friends"></i>
+                <span>Couple</span>
+            </div>
+            <div class="nav-item" onclick="scrollToSection('detail-acara')">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Acara</span>
+            </div>
+            <div class="nav-item" onclick="scrollToSection('rsvp')">
+                <i class="fas fa-book"></i>
+                <span>RSVP</span>
+            </div>
+        </div>
+
+        <!-- Audio Control Button -->
+        <button class="audio-control" id="audio-control" onclick="toggleAudio()">
+            <i class="fas fa-volume-up" id="audio-icon"></i>
+        </button>
+    </div>
+
+    <!-- Background Music (Uncomment dan ganti path sesuai file MP3 kamu) -->
+    <audio id="bg-music" loop>
+        <source src="sound/Dhilah dan Hafshad.mp3" type="audio/mpeg">
+    </audio> 
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
