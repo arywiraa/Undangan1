@@ -1,6 +1,5 @@
 // ============================================
 // WEDDING INVITATION JAVASCRIPT
-// Arya & Reva - 14 February 2026
 // ============================================
 
 // Global Variables
